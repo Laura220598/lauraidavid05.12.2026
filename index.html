@@ -394,8 +394,237 @@ background-repeat: no-repeat;
       .scroll {
         bottom: 20px;
       }
+      /* ==============================
+   LA DATA
+   ============================== */
+
+.date-section {
+  padding: 110px 20px;
+  text-align: center;
+  background: #f7f4ee;
+  color: #3f4038;
+}
+
+.date-section .section-inner {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.date-section .eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  opacity: 0.65;
+}
+
+.date-section h2 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.date-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 32px 0 38px;
+}
+
+.date-ornament span {
+  display: block;
+}
+
+.date-ornament span:not(:nth-child(2)) {
+  width: 55px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.date-ornament span:nth-child(2) {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.big-date {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.big-date .day,
+.big-date .month,
+.big-date .year {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.big-date .day,
+.big-date .month {
+  font-size: 72px;
+  letter-spacing: 2px;
+}
+
+.big-date .year {
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+.big-date .separator {
+  font-size: 28px;
+  opacity: 0.45;
+}
+
+.date-description {
+  max-width: 570px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.9;
+  opacity: 0.8;
+}
+
+.date-note {
+  margin-top: 38px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}      
     }
-  </style>
+    /* ================================
+   LA DATA · ESTIL ELEGANT
+   ================================ */
+
+.date-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: #f8f5ef;
+    color: #3f3a34;
+}
+
+.date-section .section-inner {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.date-section .eyebrow {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 25px;
+}
+
+.date-section h2 {
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0 0 35px;
+    color: #3f3a34;
+}
+
+.date-section .date-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 35px;
+}
+
+.date-section .date-ornament span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.45;
+}
+
+.date-section .big-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 10px 0 35px;
+    color: #3f3a34;
+}
+
+.date-section .big-date .day,
+.date-section .big-date .month,
+.date-section .big-date .year {
+    font-size: clamp(48px, 8vw, 90px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.date-section .big-date .separator {
+    font-size: clamp(32px, 5vw, 55px);
+    font-weight: 300;
+    opacity: 0.4;
+}
+
+.date-section .date-description {
+    max-width: 570px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.9;
+    opacity: 0.75;
+    color: #4b463f;
+}
+
+.date-section .date-note {
+    margin-top: 35px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
+
+.date-section .date-note span {
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+
+    .date-section {
+        min-height: 80vh;
+        padding: 80px 20px;
+    }
+
+    .date-section h2 {
+        font-size: 36px;
+    }
+
+    .date-section .big-date {
+        gap: 10px;
+    }
+
+    .date-section .big-date .day,
+    .date-section .big-date .month,
+    .date-section .big-date .year {
+        font-size: 48px;
+    }
+
+    .date-section .big-date .separator {
+        font-size: 30px;
+    }
+
+    .date-section .date-description {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -568,30 +797,44 @@ background-repeat: no-repeat;
        LA DATA
   =============================== -->
 
-  <section class="date-section">
+ <section class="date-section">
 
-    <div class="section-inner">
+  <div class="section-inner">
 
-      <div class="eyebrow">
-        Reserveu la data
-      </div>
-
-      <h2>
-        Ens trobem al desembre
-      </h2>
-
-      <div class="big-date">
-        05 · 12 · 2026
-      </div>
-
-      <p class="date-description">
-        Un dia d'hivern, una nova etapa i totes les persones
-        que estimem al nostre costat.
-      </p>
-
+    <div class="eyebrow">
+      La data
     </div>
 
-  </section>
+    <h2>
+      Ens trobem al desembre
+    </h2>
+
+    <div class="date-ornament">
+      <span></span>
+      <span>✦</span>
+      <span></span>
+    </div>
+
+    <div class="big-date">
+      <span class="day">05</span>
+      <span class="separator">·</span>
+      <span class="month">12</span>
+      <span class="separator">·</span>
+      <span class="year">2026</span>
+    </div>
+
+    <p class="date-description">
+      Un dia per celebrar l'amor, la vida compartida
+      i totes les aventures que encara ens queden per viure.
+    </p>
+
+    <div class="date-note">
+      <span>10 anys de nosaltres</span>
+    </div>
+
+  </div>
+
+</section>
 
 
   <!-- ==============================
