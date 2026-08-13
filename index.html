@@ -1,1 +1,684 @@
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Laura & David | Nuestra boda</title> <style> @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap'); * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: #f8f6f1; color: #26352d; font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.7; } h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; } /* ---------- PORTADA ---------- */ .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; background: linear-gradient(rgba(248,246,241,0.82), rgba(248,246,241,0.94)), url('fotos/portada.jpg') center/cover no-repeat; } .hero::before { content: ""; position: absolute; inset: 28px; border: 1px solid rgba(38,53,45,0.25); pointer-events: none; } .hero-content { position: relative; z-index: 2; padding: 30px; } .small-text { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; } .hero h1 { font-size: clamp(70px, 13vw, 150px); line-height: 0.85; color: #26352d; } .ampersand { font-size: 55px; font-style: italic; color: #a48b5a; margin: 8px 0; } .date { margin-top: 30px; font-size: 13px; letter-spacing: 5px; } .christmas-detail { margin-top: 35px; font-size: 20px; letter-spacing: 10px; opacity: 0.7; } .scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; } /* ---------- SECCIONES ---------- */ section { padding: 100px 25px; max-width: 1050px; margin: auto; } .intro { text-align: center; max-width: 720px; } .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #8c806c; margin-bottom: 15px; } .section-title { font-size: clamp(42px, 7vw, 65px); margin-bottom: 25px; } .intro p { font-size: 15px; color: #59625c; } /* ---------- HISTORIA ---------- */ .story { background: #26352d; color: #f8f6f1; max-width: none; text-align: center; } .story-inner { max-width: 700px; margin: auto; } .story .section-label { color: #c7b98d; } .story p { font-size: 16px; margin-top: 25px; } /* ---------- INFORMACIÓN ---------- */ .details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; } .detail { text-align: center; padding: 35px 20px; border-top: 1px solid #cfc8b9; border-bottom: 1px solid #cfc8b9; } .detail-icon { font-size: 24px; margin-bottom: 15px; } .detail h3 { font-size: 30px; margin-bottom: 10px; } .detail p { font-size: 13px; color: #687069; } /* ---------- UBICACIÓN ---------- */ .location { background: #eeeae1; max-width: none; text-align: center; } .location-inner { max-width: 800px; margin: auto; } .button { display: inline-block; margin-top: 25px; padding: 12px 28px; border: 1px solid #26352d; color: #26352d; text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; } .button:hover { background: #26352d; color: white; } /* ---------- FOTOS ---------- */ .photos { text-align: center; } .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 50px; } .photo-placeholder { aspect-ratio: 1 / 1; background: #e8e4db; display: flex; align-items: center; justify-content: center; color: #8d897e; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; } /* ---------- CONFIRMACIÓN ---------- */ .rsvp { text-align: center; background: #26352d; color: #f8f6f1; max-width: none; } .rsvp-inner { max-width: 650px; margin: auto; } .rsvp .section-label { color: #c7b98d; } .rsvp p { margin-top: 20px; } .rsvp .button { color: #f8f6f1; border-color: #f8f6f1; } .rsvp .button:hover { background: #f8f6f1; color: #26352d; } /* ---------- FINAL ---------- */ footer { padding: 80px 25px; text-align: center; background: #f8f6f1; } footer h2 { font-size: 55px; } footer p { margin-top: 15px; font-size: 12px; letter-spacing: 2px; color: #7d817d; } .winter { margin-top: 25px; font-size: 18px; letter-spacing: 8px; } /* ---------- MÓVIL ---------- */ @media (max-width: 700px) { .hero::before { inset: 15px; } .hero h1 { font-size: 70px; } .ampersand { font-size: 40px; } section { padding: 75px 22px; } .details { grid-template-columns: 1fr; gap: 0; } .detail { padding: 30px 15px; } .photo-grid { grid-template-columns: 1fr 1fr; } footer h2 { font-size: 45px; } } </style> </head> <body> <!-- PORTADA --> <header class="hero"> <div class="hero-content"> <div class="small-text"> Nuestra boda </div> <h1>Laura</h1> <div class="ampersand">&amp;</div> <h1>David</h1> <div class="date"> 05 · 12 · 2026 </div> <div class="christmas-detail"> ✦ ❄ ✦ </div> </div> <div class="scroll"> Desliza para descubrir </div> </header> <!-- INTRODUCCIÓN --> <section class="intro"> <div class="section-label"> El comienzo de un nuevo capítulo </div> <h2 class="section-title"> Nos casamos </h2> <p> Hay momentos que queremos recordar para siempre, y este será uno de ellos. <br><br> Queremos compartirlo con las personas que más queremos y celebrar juntos el comienzo de nuestra nueva aventura. </p> </section> <!-- HISTORIA --> <section class="story"> <div class="story-inner"> <div class="section-label"> Nuestra historia </div> <h2 class="section-title"> Dos caminos,<br>un mismo destino </h2> <p> Aquí podremos contar nuestra historia: cómo nos conocimos, nuestro primer viaje, algún momento especial o simplemente aquello que queramos compartir con nuestros invitados. </p> </div> </section> <!-- EL GRAN DÍA --> <section> <div class="intro"> <div class="section-label"> 05 · 12 · 2026 </div> <h2 class="section-title"> El gran día </h2> <p> Estos serán los momentos que compartiremos durante nuestra celebración. </p> </div> <div class="details"> <div class="detail"> <div class="detail-icon">♡</div> <h3>Ceremonia</h3> <p> Lugar de la ceremonia <br> Hora por confirmar </p> </div> <div class="detail"> <div class="detail-icon">✦</div> <h3>Celebración</h3> <p> Lugar del banquete <br> Hora por confirmar </p> </div> <div class="detail"> <div class="detail-icon">❄</div> <h3>Fiesta</h3> <p> Música, baile y muchas ganas de celebrar juntos. </p> </div> </div> </section> <!-- UBICACIÓN --> <section class="location"> <div class="location-inner"> <div class="section-label"> ¿Dónde será? </div> <h2 class="section-title"> El lugar </h2> <p> Aquí añadiremos toda la información sobre la ceremonia y la celebración, incluyendo las direcciones y el mapa. </p> <a href="#" class="button"> Ver ubicación </a> </div> </section> <!-- FOTOS --> <section class="photos"> <div class="section-label"> Nuestros recuerdos </div> <h2 class="section-title"> Momentos </h2> <p> Pronto llenaremos este espacio con nuestras fotografías. </p> <div class="photo-grid"> <div class="photo-placeholder"> Foto </div> <div class="photo-placeholder"> Foto </div> <div class="photo-placeholder"> Foto </div> <div class="photo-placeholder"> Foto </div> <div class="photo-placeholder"> Foto </div> <div class="photo-placeholder"> Foto </div> </div> </section> <!-- CONFIRMACIÓN --> <section class="rsvp"> <div class="rsvp-inner"> <div class="section-label"> Nos encantará contar contigo </div> <h2 class="section-title"> ¿Vienes? </h2> <p> Aquí colocaremos el formulario o enlace para confirmar vuestra asistencia. </p> <a href="#" class="button"> Confirmar asistencia </a> </div> </section> <!-- FINAL --> <footer> <h2> Laura &amp; David </h2> <p> 05 · 12 · 2026 </p> <div class="winter"> ✦ ❄ ✦ </div> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laura & David | 05.12.2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f7f4ee;
+      --cream: #eee9df;
+      --green: #26382f;
+      --green-light: #52665b;
+      --burgundy: #6b3b3d;
+      --text: #26302a;
+      --soft: #ddd6ca;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--text);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ------------------------------
+       PORTADA
+    ------------------------------ */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+
+      /* FOTO DE PREBODA:
+         més endavant substituirem aquest fons
+         per la vostra fotografia */
+      background:
+        linear-gradient(
+          rgba(38, 56, 47, 0.20),
+          rgba(38, 56, 47, 0.35)
+        ),
+        linear-gradient(135deg, #d9d5cb 0%, #a9aaa0 50%, #6f7b72 100%);
+    }
+
+    .hero-content {
+      color: white;
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .small-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(70px, 11vw, 145px);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -2px;
+    }
+
+    .ampersand {
+      font-style: italic;
+      font-size: 0.55em;
+      margin: 0 8px;
+    }
+
+    .date {
+      margin-top: 35px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .hero-line {
+      width: 45px;
+      height: 1px;
+      background: rgba(255,255,255,0.7);
+      margin: 30px auto;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ------------------------------
+       ESTIL GENERAL
+    ------------------------------ */
+
+    section {
+      padding: 110px 24px;
+    }
+
+    .section-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 1;
+      color: var(--green);
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 650px;
+      font-size: 15px;
+      color: #555c57;
+    }
+
+    .ornament {
+      color: var(--burgundy);
+      font-size: 17px;
+      margin: 30px 0;
+      letter-spacing: 8px;
+    }
+
+    /* ------------------------------
+       HISTÒRIA
+    ------------------------------ */
+
+    .story {
+      background: var(--ivory);
+      text-align: center;
+    }
+
+    .story .intro {
+      margin: 0 auto;
+    }
+
+    /* ------------------------------
+       DATA
+    ------------------------------ */
+
+    .date-section {
+      background: var(--green);
+      color: white;
+      text-align: center;
+    }
+
+    .date-section .eyebrow {
+      color: #c8d0ca;
+    }
+
+    .date-section h2 {
+      color: white;
+    }
+
+    .big-date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(50px, 9vw, 100px);
+      font-weight: 300;
+      line-height: 1;
+      margin: 35px 0;
+    }
+
+    .date-description {
+      max-width: 550px;
+      margin: 0 auto;
+      color: #dce1dc;
+      font-size: 14px;
+    }
+
+    /* ------------------------------
+       LLOC
+    ------------------------------ */
+
+    .location {
+      background: var(--cream);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .location-card {
+      border-top: 1px solid var(--soft);
+      border-bottom: 1px solid var(--soft);
+      padding: 35px 0;
+    }
+
+    .location-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .location-card p {
+      font-size: 14px;
+      color: #5e635f;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 28px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* ------------------------------
+       INFORMACIÓ
+    ------------------------------ */
+
+    .info {
+      background: var(--ivory);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 45px;
+      margin-top: 55px;
+    }
+
+    .info-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .info-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+
+    .info-item h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .info-item p {
+      font-size: 13px;
+      color: #656a66;
+    }
+
+    /* ------------------------------
+       RSVP
+    ------------------------------ */
+
+    .rsvp {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .rsvp-box {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .rsvp-text {
+      color: #5d625e;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .rsvp .button {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .rsvp .button:hover {
+      background: transparent;
+      color: var(--green);
+    }
+
+    /* ------------------------------
+       FINAL
+    ------------------------------ */
+
+    .closing {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--green);
+      color: white;
+    }
+
+    .closing h2 {
+      color: white;
+      font-size: clamp(55px, 8vw, 95px);
+    }
+
+    .closing p {
+      color: #dce1dc;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .closing-date {
+      margin-top: 25px;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c8d0ca;
+    }
+
+    /* ------------------------------
+       MÒBIL
+    ------------------------------ */
+
+    @media (max-width: 700px) {
+
+      section {
+        padding: 80px 22px;
+      }
+
+      .names {
+        font-size: 70px;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 100svh;
+      }
+
+      .scroll {
+        bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==============================
+       PORTADA
+  =============================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Ens casem
+      </div>
+
+      <div class="names">
+        Laura <span class="ampersand">&</span> David
+      </div>
+
+      <div class="hero-line"></div>
+
+      <div class="date">
+        05 · 12 · 2026
+      </div>
+
+    </div>
+
+    <div class="scroll">
+      Descobreix el nostre dia
+      <br>
+      ↓
+    </div>
+
+  </header>
+
+
+  <!-- ==============================
+       LA NOSTRA HISTÒRIA
+  =============================== -->
+
+  <section class="story">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        La nostra història
+      </div>
+
+      <h2>Un dia per celebrar-nos</h2>
+
+      <div class="ornament">
+        ✦
+      </div>
+
+      <p class="intro">
+        Hi ha moments que passen una vegada i d'altres que
+        voldríem recordar per sempre. El nostre dia és un
+        d'aquests moments que volem compartir amb les persones
+        que més estimem.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       LA DATA
+  =============================== -->
+
+  <section class="date-section">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        Reserveu la data
+      </div>
+
+      <h2>
+        Ens trobem al desembre
+      </h2>
+
+      <div class="big-date">
+        05 · 12 · 2026
+      </div>
+
+      <p class="date-description">
+        Un dia d'hivern, una nova etapa i totes les persones
+        que estimem al nostre costat.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       EL LLOC
+  =============================== -->
+
+  <section class="location">
+
+    <div class="section-inner">
+
+      <div class="location-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            La celebració
+          </div>
+
+          <h2>
+            El nostre lloc
+          </h2>
+
+          <p class="intro">
+            Aquí afegirem tota la informació sobre la cerimònia
+            i la celebració.
+          </p>
+
+        </div>
+
+        <div class="location-card">
+
+          <h3>
+            Properament
+          </h3>
+
+          <p>
+            En aquest espai indicarem el nom del lloc,
+            l'adreça i els horaris.
+          </p>
+
+          <a href="#" class="button">
+            Com arribar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       INFORMACIÓ
+  =============================== -->
+
+  <section class="info">
+
+    <div class="section-inner">
+
+      <div class="eyebrow">
+        Perquè tot sigui fàcil
+      </div>
+
+      <h2>
+        Informació útil
+      </h2>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+
+          <div class="info-number">
+            I
+          </div>
+
+          <h3>
+            Com arribar
+          </h3>
+
+          <p>
+            Més endavant afegirem les indicacions,
+            aparcament i ubicació.
+          </p>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-number">
+            II
+          </div>
+
+          <h3>
+            Allotjament
+          </h3>
+
+          <p>
+            Afegirem aquí les opcions d'allotjament
+            més recomanades.
+          </p>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-number">
+            III
+          </div>
+
+          <h3>
+            Preguntes
+          </h3>
+
+          <p>
+            Tot allò que necessiteu saber abans
+            del nostre gran dia.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       RSVP
+  =============================== -->
+
+  <section class="rsvp">
+
+    <div class="rsvp-box">
+
+      <div class="eyebrow">
+        Confirma la teva assistència
+      </div>
+
+      <h2>
+        Vens amb nosaltres?
+      </h2>
+
+      <p class="rsvp-text">
+        Ens farà molta il·lusió compartir aquest dia amb tu.
+        Properament podreu confirmar la vostra assistència
+        des d'aquí.
+      </p>
+
+      <a href="#" class="button">
+        Confirmar assistència
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       FINAL
+  =============================== -->
+
+  <section class="closing">
+
+    <div>
+
+      <div class="ornament">
+        ✦
+      </div>
+
+      <h2>
+        Ens veiem al desembre
+      </h2>
+
+      <p>
+        I serà encara més especial perquè hi sereu vosaltres.
+      </p>
+
+      <div class="closing-date">
+        Laura & David · 05 · 12 · 2026
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
