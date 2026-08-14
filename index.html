@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -624,6 +624,159 @@ background-repeat: no-repeat;
         padding: 0 10px;
     }
 }
+    /* ==============================
+   PORTADA · NOU ESTIL
+============================== */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 28, 24, 0.34);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px 25px;
+}
+
+.names {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(58px, 9vw, 125px);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: 1px;
+}
+
+.ampersand {
+  font-style: italic;
+  font-size: 0.6em;
+  margin: 0 8px;
+}
+
+.hero-line {
+  width: 100px;
+  height: 1px;
+  background: rgba(255,255,255,0.65);
+  margin: 38px auto 28px;
+}
+
+.welcome {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(11px, 1.4vw, 15px);
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.forever {
+  font-family: "Ballet", cursive;
+  font-size: clamp(55px, 7vw, 92px);
+  font-weight: 400;
+  line-height: 1;
+  margin: 8px 0 10px;
+}
+
+.heart {
+  font-size: 25px;
+  font-family: serif;
+  margin: 5px 0 12px;
+  opacity: 0.9;
+}
+
+.date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  margin-top: 12px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 42px auto 0;
+  max-width: 760px;
+}
+
+.countdown-item {
+  min-width: 145px;
+  padding: 0 28px;
+  border-right: 1px solid rgba(255,255,255,0.45);
+  text-align: center;
+}
+
+.countdown-item:last-child {
+  border-right: none;
+}
+
+.countdown-item span {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 65px);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.countdown-item small {
+  display: block;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+
+  .hero-content {
+    padding: 30px 18px;
+  }
+
+  .names {
+    font-size: 60px;
+  }
+
+  .welcome {
+    letter-spacing: 4px;
+    font-size: 10px;
+  }
+
+  .forever {
+    font-size: 58px;
+  }
+
+  .date {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .countdown {
+    margin-top: 32px;
+  }
+
+  .countdown-item {
+    min-width: 0;
+    flex: 1;
+    padding: 0 8px;
+  }
+
+  .countdown-item span {
+    font-size: 36px;
+  }
+
+  .countdown-item small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+}
     </style>
 </head>
 
@@ -637,19 +790,47 @@ background-repeat: no-repeat;
 
     <div class="hero-content">
 
-      <div class="small-title">
-        Ens casem
-      </div>
+     <div class="names">
+  Laura <span class="ampersand">&</span> David
+</div>
 
-      <div class="names">
-        Laura <span class="ampersand">&</span> David
-      </div>
+<div class="hero-line"></div>
 
-      <div class="hero-line"></div>
+<div class="welcome">
+  BENVINGUTS AL NOSTRE
+</div>
 
-      <div class="date">
-        05 · 12 · 2026
-      </div>
+<div class="forever">
+  Feliços per sempre
+</div>
+
+<div class="heart">♡</div>
+
+<div class="date">
+  05 · 12 · 2026
+</div>
+
+<div class="countdown">
+  <div class="countdown-item">
+    <span id="days">0</span>
+    <small>DIES</small>
+  </div>
+
+  <div class="countdown-item">
+    <span id="hours">0</span>
+    <small>HORES</small>
+  </div>
+
+  <div class="countdown-item">
+    <span id="minutes">0</span>
+    <small>MINUTS</small>
+  </div>
+
+  <div class="countdown-item">
+    <span id="seconds">0</span>
+    <small>SEGONS</small>
+  </div>
+</div>
 
     </div>
 
@@ -1030,6 +1211,50 @@ background-repeat: no-repeat;
     </div>
 
   </section>
+  
+<script>
+  const weddingDate = new Date("December 5, 2026 00:00:00").getTime();
 
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+      document.getElementById("days").textContent = "0";
+      document.getElementById("hours").textContent = "0";
+      document.getElementById("minutes").textContent = "0";
+      document.getElementById("seconds").textContent = "0";
+      return;
+    }
+
+    const days = Math.floor(
+      difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+      (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+      (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+      (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent =
+      String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent =
+      String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent =
+      String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+  
 </body>
 </html>
