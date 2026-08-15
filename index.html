@@ -101,12 +101,33 @@ background-repeat: no-repeat;
       text-transform: uppercase;
     }
 
-    .hero-line {
-      width: 45px;
-      height: 1px;
-      background: rgba(255,255,255,0.7);
-      margin: 30px auto;
-    }
+.hero-line {
+    width: 55px;
+    height: 1px;
+    background: rgba(255,255,255,0.7);
+    margin: 30px auto;
+    position: relative;
+}
+
+.hero-line::before,
+.hero-line::after {
+    content: "❦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+}
+
+.hero-line::before {
+    right: 100%;
+    margin-right: 7px;
+}
+
+.hero-line::after {
+    left: 100%;
+    margin-left: 7px;
+}
 
     .scroll {
       position: absolute;
