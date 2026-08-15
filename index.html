@@ -101,39 +101,28 @@ background-repeat: no-repeat;
       text-transform: uppercase;
     }
 
+/* ORNAMENT VEGETAL - PORTADA */
 .hero-line {
-    width: 150px;
-    height: 24px;
+    width: 170px;
+    height: 28px;
     margin: 30px auto;
     position: relative;
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            transparent 8%,
-            rgba(255,255,255,0.65) 8%,
-            rgba(255,255,255,0.65) 92%,
-            transparent 92%,
-            transparent 100%
-        );
-    background-size: 100% 1px;
+    background: transparent;
+    border: none;
+}
+
+.hero-line::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 56'%3E%3Cpath d='M8 31 C70 31 105 29 135 25 C145 24 150 23 170 23 C190 23 195 24 205 25 C235 29 270 31 332 31' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='1'/%3E%3Cpath d='M82 30 C88 25 91 20 91 14' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cpath d='M110 28 C114 23 116 18 115 13' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cpath d='M138 25 C140 21 140 17 138 13' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cpath d='M258 30 C252 25 249 20 249 14' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cpath d='M230 28 C226 23 224 18 225 13' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cpath d='M202 25 C200 21 200 17 202 13' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='86' cy='20' rx='7' ry='2.3' transform='rotate(-35 86 20)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='94' cy='24' rx='7' ry='2.3' transform='rotate(25 94 24)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='112' cy='19' rx='7' ry='2.3' transform='rotate(-35 112 19)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='119' cy='23' rx='7' ry='2.3' transform='rotate(25 119 23)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='138' cy='18' rx='6' ry='2' transform='rotate(-35 138 18)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='202' cy='18' rx='6' ry='2' transform='rotate(35 202 18)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='221' cy='19' rx='7' ry='2.3' transform='rotate(35 221 19)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='228' cy='24' rx='7' ry='2.3' transform='rotate(-25 228 24)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='248' cy='20' rx='7' ry='2.3' transform='rotate(35 248 20)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3Cellipse cx='256' cy='24' rx='7' ry='2.3' transform='rotate(-25 256 24)' fill='none' stroke='%23ffffff' stroke-opacity='.62' stroke-width='.8'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .hero-line::after {
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 24px;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    background:
-        radial-gradient(ellipse 7px 3px at 18% 35%, rgba(255,255,255,0.75) 0 45%, transparent 50%),
-        radial-gradient(ellipse 7px 3px at 32% 65%, rgba(255,255,255,0.75) 0 45%, transparent 50%),
-        radial-gradient(ellipse 7px 3px at 68% 65%, rgba(255,255,255,0.75) 0 45%, transparent 50%),
-        radial-gradient(ellipse 7px 3px at 82% 35%, rgba(255,255,255,0.75) 0 45%, transparent 50%);
+    content: none !important;
 }
 
     .scroll {
