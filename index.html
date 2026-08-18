@@ -1037,35 +1037,41 @@
        7. UN DETALL (regal)
   =============================== -->
 
-  <section class="gift">
+```html
+<section class="gift">
 
-    <div class="section-inner">
+  <div class="section-inner">
 
-      <p class="gift-intro">
-        El millor regal és tenir-vos amb nosaltres aquest dia.
+    <div class="eyebrow">Un petit detall</div>
+
+    <h2>El millor regal és tenir-vos amb nosaltres</h2>
+
+    <p class="gift-intro">
+      Però si ens voleu fer un petit detall, ens ajudarà a fer realitat
+      el nostre viatge de noces a Sri Lanka i Maldives.
+    </p>
+
+    <button class="gift-toggle" id="gift-toggle" onclick="toggleGift()">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="18" width="32" height="22" rx="1"/>
+        <line x1="8" y1="26" x2="40" y2="26"/>
+        <line x1="24" y1="18" x2="24" y2="40"/>
+        <path d="M24 18c0-5-4-8-7-8s-4 3-1 6c2 2 5 2 8 2z"/>
+        <path d="M24 18c0-5 4-8 7-8s4 3 1 6c-2 2-5 2-8 2z"/>
+      </svg>
+
+      <span>Si hi voleu fer un detall</span>
+    </button>
+
+    <div class="gift-details" id="gift-details">
+      <p>
+        Laura Nom Cognom · ES00 0000 0000 0000 0000 0000
       </p>
-
-      <button class="gift-toggle" id="gift-toggle" onclick="toggleGift()">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="8" y="18" width="32" height="22" rx="1"/>
-          <line x1="8" y1="26" x2="40" y2="26"/>
-          <line x1="24" y1="18" x2="24" y2="40"/>
-          <path d="M24 18c0-5-4-8-7-8s-4 3-1 6c2 2 5 2 8 2z"/>
-          <path d="M24 18c0-5 4-8 7-8s4 3 1 6c-2 2-5 2-8 2z"/>
-        </svg>
-        <span>Si hi voleu fer un detall</span>
-      </button>
-
-      <div class="gift-details" id="gift-details">
-        <p>
-          <!-- 👉 Substitueix aquestes dades pel número de compte real quan el tinguis a mà -->
-          Laura Nom Cognom · ES00 0000 0000 0000 0000 0000
-        </p>
-      </div>
-
     </div>
 
-  </section>
+  </div>
+
+</section>
 
   <!-- ==============================
        8. ENS VEIEM AL DESEMBRE
