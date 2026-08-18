@@ -436,6 +436,7 @@
     }
 
     .location-map {
+      position: relative;
       min-height: 320px;
       border-radius: 3px;
       overflow: hidden;
@@ -448,6 +449,16 @@
       min-height: 320px;
       border: 0;
       display: block;
+    }
+
+    .location-map .map-mask {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 130px;
+      height: 48px;
+      background: var(--cream);
+      z-index: 2;
     }
 
     /* ------------------------------
@@ -535,6 +546,59 @@
     .rsvp .button:hover {
       background: transparent;
       color: var(--green);
+    }
+
+    /* ------------------------------
+       UN DETALL (regal)
+    ------------------------------ */
+
+    .gift {
+      background: var(--ivory);
+      text-align: center;
+      padding: 70px 24px;
+    }
+
+    .gift-intro {
+      font-size: 13px;
+      color: #6b7167;
+      max-width: 420px;
+      margin: 0 auto 22px;
+    }
+
+    .gift-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--green-light);
+      font-family: "Montserrat", sans-serif;
+      padding: 8px;
+    }
+
+    .gift-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .gift-toggle span {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .gift-details {
+      display: none;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #555c57;
+      letter-spacing: 0.5px;
+    }
+
+    .gift-details.show {
+      display: block;
     }
 
     /* ------------------------------
@@ -861,6 +925,7 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
+          <div class="map-mask"></div>
         </div>
 
       </div>
@@ -973,7 +1038,41 @@
   </section>
 
   <!-- ==============================
-       7. ENS VEIEM AL DESEMBRE
+       7. UN DETALL (regal)
+  =============================== -->
+
+  <section class="gift">
+
+    <div class="section-inner">
+
+      <p class="gift-intro">
+        El millor regal és tenir-vos amb nosaltres aquest dia.
+      </p>
+
+      <button class="gift-toggle" id="gift-toggle" onclick="toggleGift()">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="18" width="32" height="22" rx="1"/>
+          <line x1="8" y1="26" x2="40" y2="26"/>
+          <line x1="24" y1="18" x2="24" y2="40"/>
+          <path d="M24 18c0-5-4-8-7-8s-4 3-1 6c2 2 5 2 8 2z"/>
+          <path d="M24 18c0-5 4-8 7-8s4 3 1 6c-2 2-5 2-8 2z"/>
+        </svg>
+        <span>Si hi voleu fer un detall</span>
+      </button>
+
+      <div class="gift-details" id="gift-details">
+        <p>
+          <!-- 👉 Substitueix aquestes dades pel número de compte real quan el tinguis a mà -->
+          Laura Nom Cognom · ES00 0000 0000 0000 0000 0000
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==============================
+       8. ENS VEIEM AL DESEMBRE
   =============================== -->
 
   <section class="closing">
@@ -989,7 +1088,7 @@
 
   <script>
     // Compte enrere
-    const weddingDate = new Date("December 5, 2026 12:30:00").getTime();
+    const weddingDate = new Date("2026-12-05T12:30:00+01:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -1058,6 +1157,11 @@
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add("active");
       }, 2000);
+    }
+
+    // Mostrar / amagar el detall del regal
+    function toggleGift() {
+      document.getElementById("gift-details").classList.toggle("show");
     }
 
     // Mostrar / amagar la resta de la història
