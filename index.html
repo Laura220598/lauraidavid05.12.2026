@@ -1088,34 +1088,81 @@
   </section>
 
   <script>
-    // Compte enrere
-    const weddingDate = new Date("2026-12-05T00:00:00+01:00").getTime();
+   // Compte enrere
+const targetDate = {
+  year: 2026,
+  month: 12,
+  day: 5,
+  hour: 0,
+  minute: 0,
+  second: 0
+};
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const difference = weddingDate - now;
+function getMadridTime() {
+  const now = new Date();
 
-      if (difference <= 0) {
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("seconds").textContent = "0";
-        return;
-      }
+  const madrid = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Madrid",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(now);
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  const parts = {};
+  madrid.forEach(({ type, value }) => {
+    if (type !== "literal") {
+      parts[type] = Number(value);
     }
+  });
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+  return Date.UTC(
+    parts.year,
+    parts.month - 1,
+    parts.day,
+    parts.hour,
+    parts.minute,
+    parts.second
+  );
+}
+
+const weddingDate = Date.UTC(
+  targetDate.year,
+  targetDate.month - 1,
+  targetDate.day,
+  targetDate.hour,
+  targetDate.minute,
+  targetDate.second
+);
+
+function updateCountdown() {
+  const now = getMadridTime();
+  const difference = weddingDate - now;
+
+  if (difference <= 0) {
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "0";
+    document.getElementById("minutes").textContent = "0";
+    document.getElementById("seconds").textContent = "0";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
     // ============================================
     // 📸 FOTOS DE "SABER-NE MÉS"
