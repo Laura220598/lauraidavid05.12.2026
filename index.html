@@ -334,21 +334,26 @@
    FOTOS INTERCALADES A LA HISTÒRIA
 ------------------------------ */
 
-.story-photo {
-  width: 100%;
-  max-width: 520px;
-  margin: 45px auto;
+    .story-photo {
+  width: 90%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 3px;
+  background: var(--soft);
 }
 
 .story-photo img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
-    
+ 
     /* ==============================
    DETALLS DAURATS
 ============================== */
