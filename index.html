@@ -1251,49 +1251,6 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-    // ============================================
-    // 📸 FOTOS DE "SABER-NE MÉS"
-    // Escriu aquí el nom de cada foto, entre cometes i amb una coma al final.
-    // Pots posar-ne les que vulguis: 12, 100, 150... Les fotos han d'estar
-    // pujades a GitHub a la mateixa carpeta que aquest arxiu index.html.
-    // Exemple:
-    // const storyPhotos = [
-    //   "foto1.jpg",
-    //   "foto2.jpg",
-    //   "foto3.jpg",
-    // ];
-    // ============================================
-    const storyPhotos = [
-      // 👉 Afegeix aquí els noms dels teus arxius de fotos
-    ];
-
-    const slideshowBox = document.getElementById("story-slideshow");
-
-    if (storyPhotos.length > 0) {
-      storyPhotos.forEach((filename, i) => {
-        const slide = document.createElement("div");
-        slide.className = "slide" + (i === 0 ? " active" : "");
-        const img = document.createElement("img");
-        img.src = filename;
-        img.alt = "";
-        slide.appendChild(img);
-        slideshowBox.appendChild(slide);
-      });
-    } else {
-      slideshowBox.innerHTML = '<div class="slide active">Aquí aniran les fotos</div>';
-    }
-
-    // Pase automàtic de fotos (cada 2 segons)
-    let currentSlide = 0;
-    if (storyPhotos.length > 1) {
-      setInterval(() => {
-        const slides = document.querySelectorAll("#story-slideshow .slide");
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add("active");
-      }, 2000);
-    }
-
     // Mostrar / amagar el detall del regal
     function toggleGift() {
       document.getElementById("gift-details").classList.toggle("show");
