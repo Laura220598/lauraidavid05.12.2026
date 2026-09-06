@@ -1338,6 +1338,22 @@ setInterval(updateCountdown, 1000);
 setTimeout(() => {
   const base = slideshow.prefix + currentPhoto;
 
+  // Enquadrament especial per algunes fotos de Castelló
+  if (slideshow.prefix === "castello-") {
+    const castelloPositions = {
+      8: "center 20%",
+      9: "center 20%",
+      15: "center 20%",
+      17: "center 20%",
+      23: "center 20%"
+    };
+
+    img.style.objectPosition =
+      castelloPositions[currentPhoto] || "center center";
+  } else {
+    img.style.objectPosition = "center center";
+  }
+
   img.onerror = () => {
     img.onerror = null;
     img.src = base + ".jpg";
