@@ -1330,10 +1330,17 @@ setInterval(updateCountdown, 1000);
 
         img.style.opacity = "0";
 
-        setTimeout(() => {
-          img.src = slideshow.prefix + currentPhoto + ".JPG";
-          img.style.opacity = "1";
-        }, 500);
+setTimeout(() => {
+  const base = slideshow.prefix + currentPhoto;
+
+  img.onerror = () => {
+    img.onerror = null;
+    img.src = base + ".jpg";
+  };
+
+  img.src = base + ".JPG";
+  img.style.opacity = "1";
+}, 500);
 
       }, 4000);
 
