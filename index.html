@@ -825,7 +825,7 @@
 
 <!-- FOTOS PERALADA -->
 <div class="story-photo story-photo-slideshow" id="photos-peralada">
-  <img src="peralada-1.jpg" alt="Laura i David a Peralada">
+  <img id="peralada-img" src="peralada-1.JPG" alt="Laura i David a Peralada">
 </div>
 
 <p style="text-align: justify; line-height: 1.8; margin-bottom: 24px;">
@@ -1331,7 +1331,7 @@ setInterval(updateCountdown, 1000);
         img.style.opacity = "0";
 
         setTimeout(() => {
-          img.src = slideshow.prefix + currentPhoto + ".jpg";
+          img.src = slideshow.prefix + currentPhoto + ".JPG";
           img.style.opacity = "1";
         }, 500);
 
