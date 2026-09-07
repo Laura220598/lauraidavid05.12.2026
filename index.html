@@ -315,7 +315,7 @@
    FOTOS INTERCALADES A LA HISTÒRIA
 ------------------------------ */
 
-    .story-photo {
+  .story-photo {
   width: 90%;
   max-width: 440px;
   aspect-ratio: 4 / 3;
@@ -323,16 +323,23 @@
   overflow: hidden;
   border-radius: 3px;
   background: var(--soft);
+  position: relative;
 }
 
 .story-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.story-photo img.active {
   opacity: 1;
-  transition: opacity 0.25s ease;
 }
  
     /* ==============================
@@ -1296,73 +1303,104 @@ setInterval(updateCountdown, 1000);
 
     };
 
-    Object.values(storySlideshows).forEach(slideshow => {
+ Object.values(storySlideshows).forEach(slideshow => {
 
-      const box = document.getElementById(slideshow.element);
+  const box = document.getElementById(slideshow.element);
 
-      if (!box) return;
+  if (!box) return;
 
-      let currentPhoto = 1;
+  const firstImg = box.querySelector("img");
 
-      setInterval(() => {
+  if (!firstImg) return;
 
-        currentPhoto++;
+  firstImg.classList.add("active");
 
-        if (currentPhoto > slideshow.total) {
-          currentPhoto = 1;
-        }
+  // Creem una segona imatge superposada
+  const secondImg = document.createElement("img");
+  secondImg.alt = firstImg.alt || "";
+  box.appendChild(secondImg);
 
-       const img = box.querySelector("img");
-const base = slideshow.prefix + currentPhoto;
+  let visibleImg = firstImg;
+  let hiddenImg = secondImg;
 
-// Enquadrament especial per algunes fotos de Castelló
-if (slideshow.prefix === "castello-") {
-  const castelloPositions = {
-    8: "center 20%",
-    9: "center 20%",
-    15: "center 20%",
-    17: "center 20%",
-    23: "center 20%"
-  };
+  let currentPhoto = 1;
 
-  img.style.objectPosition =
-    castelloPositions[currentPhoto] || "center center";
-} else {
-  img.style.objectPosition = "center center";
-}
+  setInterval(() => {
 
-// Carreguem primer la foto nova abans de mostrar-la
-const nextImage = new Image();
+    currentPhoto++;
 
-nextImage.onload = () => {
-  img.style.opacity = "0";
+    if (currentPhoto > slideshow.total) {
+      currentPhoto = 1;
+    }
 
-  setTimeout(() => {
-    img.src = nextImage.src;
-    img.style.opacity = "1";
-  }, 250);
-};
+    const base = slideshow.prefix + currentPhoto;
 
-nextImage.onerror = () => {
-  const fallbackImage = new Image();
+    // Enquadrament de la nova foto
+    let position = "center center";
 
-  fallbackImage.onload = () => {
-    img.style.opacity = "0";
+    if (slideshow.prefix === "castello-") {
 
-    setTimeout(() => {
-      img.src = fallbackImage.src;
-      img.style.opacity = "1";
-    }, 250);
-  };
+      const castelloPositions = {
+        8: "center 20%",
+        9: "center 20%",
+        15: "center 20%",
+        17: "center 20%",
+        23: "center 20%"
+      };
 
-  fallbackImage.src = base + ".jpg";
-};
+      position =
+        castelloPositions[currentPhoto] || "center center";
+    }
 
-nextImage.src = base + ".JPG";
+    // Carreguem primer la foto nova
+    const preload = new Image();
 
-      }, 4000);
+    preload.onload = () => {
 
-    });
+      hiddenImg.src = preload.src;
+      hiddenImg.style.objectPosition = position;
+
+      // Forcem el navegador a preparar la nova foto
+      hiddenImg.offsetHeight;
+
+      // Crossfade
+      hiddenImg.classList.add("active");
+      visibleImg.classList.remove("active");
+
+      // Intercanviem els papers
+      const oldVisible = visibleImg;
+      visibleImg = hiddenImg;
+      hiddenImg = oldVisible;
+    };
+
+    // Si no existeix .JPG, prova .jpg
+    preload.onerror = () => {
+
+      const fallback = new Image();
+
+      fallback.onload = () => {
+
+        hiddenImg.src = fallback.src;
+        hiddenImg.style.objectPosition = position;
+
+        hiddenImg.offsetHeight;
+
+        hiddenImg.classList.add("active");
+        visibleImg.classList.remove("active");
+
+        const oldVisible = visibleImg;
+        visibleImg = hiddenImg;
+        hiddenImg = oldVisible;
+      };
+
+      fallback.src = base + ".jpg";
+    };
+
+    preload.src = base + ".JPG";
+
+  }, 4000);
+
+});
     
   </script>
 
