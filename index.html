@@ -332,7 +332,7 @@
   object-position: center;
   display: block;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.25s ease;
 }
  
     /* ==============================
@@ -1312,37 +1312,53 @@ setInterval(updateCountdown, 1000);
           currentPhoto = 1;
         }
 
-        const img = box.querySelector("img");
+       const img = box.querySelector("img");
+const base = slideshow.prefix + currentPhoto;
 
-        img.style.opacity = "0";
-
-setTimeout(() => {
-  const base = slideshow.prefix + currentPhoto;
-
-  // Enquadrament especial per algunes fotos de Castelló
-  if (slideshow.prefix === "castello-") {
-    const castelloPositions = {
-      8: "center 20%",
-      9: "center 20%",
-      15: "center 20%",
-      17: "center 20%",
-      23: "center 20%"
-    };
-
-    img.style.objectPosition =
-      castelloPositions[currentPhoto] || "center center";
-  } else {
-    img.style.objectPosition = "center center";
-  }
-
-  img.onerror = () => {
-    img.onerror = null;
-    img.src = base + ".jpg";
+// Enquadrament especial per algunes fotos de Castelló
+if (slideshow.prefix === "castello-") {
+  const castelloPositions = {
+    8: "center 20%",
+    9: "center 20%",
+    15: "center 20%",
+    17: "center 20%",
+    23: "center 20%"
   };
 
-  img.src = base + ".JPG";
-  img.style.opacity = "1";
-}, 500);
+  img.style.objectPosition =
+    castelloPositions[currentPhoto] || "center center";
+} else {
+  img.style.objectPosition = "center center";
+}
+
+// Carreguem primer la foto nova abans de mostrar-la
+const nextImage = new Image();
+
+nextImage.onload = () => {
+  img.style.opacity = "0";
+
+  setTimeout(() => {
+    img.src = nextImage.src;
+    img.style.opacity = "1";
+  }, 250);
+};
+
+nextImage.onerror = () => {
+  const fallbackImage = new Image();
+
+  fallbackImage.onload = () => {
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+      img.src = fallbackImage.src;
+      img.style.opacity = "1";
+    }, 250);
+  };
+
+  fallbackImage.src = base + ".jpg";
+};
+
+nextImage.src = base + ".JPG";
 
       }, 4000);
 
