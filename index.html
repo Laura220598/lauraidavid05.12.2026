@@ -1348,6 +1348,20 @@ Object.values(storySlideshows).forEach(slideshow => {
         castelloPositions[currentPhoto] || "center center";
     }
 
+    if (slideshow.prefix === "viatges-") {
+
+  const viatgesPositions = {
+    5: "center 5%",
+    6: "center 5%",
+    13: "center 5%",
+    14: "center 5%",
+    17: "center 5%"
+  };
+
+  position =
+    viatgesPositions[currentPhoto] || "center center";
+}
+
     // Carreguem primer la foto nova
     const preload = new Image();
 
