@@ -1374,6 +1374,16 @@ Object.values(storySlideshows).forEach(slideshow => {
     togoPositions[currentPhoto] || "center center";
 }
 
+    if (slideshow.prefix === "tanzania-") {
+
+  const tanzaniaPositions = {
+    8: "center 20%",
+    10: "center 20%"
+  };
+
+  position =
+    tanzaniaPositions[currentPhoto] || "center center";
+}
     // Carreguem primer la foto nova
     const preload = new Image();
 
